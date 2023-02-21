@@ -12,7 +12,7 @@ dotenv.config({ path: "./config/config.env" });
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb', extended: true }));
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }))
+app.use(cors({ origin: 'https://socialpedia-6id8.onrender.com', credentials: true }))
 // app.use((req, res, next) => {
 //   res.header('Access-Control-Allow-Credentials', true);
 //   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,UPDATE,OPTIONS');
