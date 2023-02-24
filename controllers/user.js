@@ -31,7 +31,7 @@ export const register = async (req, res) => {
       expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
       httpOnly: false,
       sameSite: "none",
-      secure: false
+      secure: true
     };
     res.status(201).cookie("token", token, options).json({
       success: true,
@@ -80,8 +80,8 @@ export const login = async (req, res) => {
     const options = {
       expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
       httpOnly: false,
-      secure: false,
-      sameSite: "none"
+      sameSite: "none",
+      secure: true,
     };
     res.cookie("token", token, options);
     return res.status(201).cookie("token", token, options).json({
