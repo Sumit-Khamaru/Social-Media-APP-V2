@@ -101,7 +101,9 @@ export const login = async (req, res) => {
 export const logout = (req, res) => {
   const options = {
     expires: new Date(Date.now()),
-    httpOnly: true,
+    httpOnly: false,
+    sameSite: "none",
+    secure: true
   };
   try {
     res.status(200).cookie("token", null, options).json({
